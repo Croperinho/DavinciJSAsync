@@ -1,5 +1,15 @@
-
 const obtenerChiste = require("./library");
 
 // Usar la funcion obtenerChiste() la cual devuelve la promesa de traer el objeto chiste extraido
-obtenerChiste();
+function mostrarChiste(chiste){
+    let chisteDownloaded=chiste[0];
+    console.log(chisteDownloaded.setup);
+    console.log(chisteDownloaded.punchline);
+}
+
+obtenerChiste()
+.then((chiste) => {
+    mostrarChiste(chiste);
+}).catch((err) => {
+    console.log("Donde esta el chiste?")
+});
